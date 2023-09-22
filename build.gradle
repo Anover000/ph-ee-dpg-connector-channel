@@ -60,6 +60,17 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    implementation 'org.apache.camel.springboot:camel-spring-boot-starter:3.12.0'
+    implementation 'org.apache.camel:camel-bean-validator:3.12.0'
+    implementation 'org.apache.camel:camel-endpointdsl:3.12.0'
+    implementation 'org.apache.camel:camel-jetty:3.12.0'
+    implementation 'org.json:json:20211205'
+
+    implementation 'org.mifos:ph-ee-connector-common:1.4.1-SNAPSHOT'
+
+    implementation 'org.apache.camel.springboot:camel-jackson-starter:3.12.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1'
+    implementation 'com.github.joschi.jackson:jackson-datatype-threetenbp:2.6.4'
 
     //	conductor dependencies
     implementation 'com.netflix.conductor:conductor-common:3.13.8'
@@ -69,6 +80,33 @@ dependencies {
     checkstyle 'com.github.sevntu-checkstyle:sevntu-checks:1.44.1'
     implementation 'com.diffplug.gradle.spotless:spotless:2.4.1'
     implementation 'com.diffplug.spotless:spotless-plugin-gradle:6.17.0'
+
+    implementation("org.apache.camel:camel-spring-redis:3.12.0")
+    implementation "org.springframework.boot:spring-boot-starter-data-redis:2.6.2"
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'commons-io:commons-io:2.11.0'
+
+
+
+    implementation 'org.apache.camel:camel-http:3.12.0'
+    implementation 'org.apache.camel:camel-undertow:3.12.0'
+
+
+    //to filter required ones
+
+    implementation('com.google.code.gson:gson:2.8.9')
+    //	implementation "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation 'javax.servlet:javax.servlet-api:3.1.0'
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation "org.springframework.boot:spring-boot-starter-data-redis:2.6.2"
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation 'io.springfox:springfox-oas:3.0.0'
+    implementation "org.springdoc:springdoc-openapi-ui:1.6.11"
+    implementation 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 
