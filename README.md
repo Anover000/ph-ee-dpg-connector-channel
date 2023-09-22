@@ -1,5 +1,4 @@
-# ph-ee-dpg-template
-=======
+# dpga-connector-channel
 # dpga
 Digital Public Goods Alliance middleware for integration to real-time payment systems.
 #Auto-Trigger
