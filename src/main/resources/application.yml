@@ -82,7 +82,7 @@ bpmns:
 
 conductor:
   server:
-    host: "conductor-server"
+    host: "http://conductor-server.netflix.svc.cluster.local:8080/"
     workflow:
       version: 1
 
