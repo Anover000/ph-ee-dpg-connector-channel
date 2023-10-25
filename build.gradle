@@ -59,16 +59,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    implementation 'org.apache.camel.springboot:camel-spring-boot-starter:3.12.0'
-    implementation 'org.apache.camel:camel-bean-validator:3.12.0'
-    implementation 'org.apache.camel:camel-endpointdsl:3.12.0'
-    implementation 'org.apache.camel:camel-jetty:3.12.0'
     implementation 'org.json:json:20211205'
 
     implementation 'org.mifos:ph-ee-connector-common:1.4.1-SNAPSHOT'
-
-    implementation 'org.apache.camel.springboot:camel-jackson-starter:3.12.0'
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1'
     implementation 'com.github.joschi.jackson:jackson-datatype-threetenbp:2.6.4'
 
@@ -85,11 +78,6 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-data-redis:2.6.2"
     implementation 'commons-codec:commons-codec:1.15'
     implementation 'commons-io:commons-io:2.11.0'
-
-
-
-    implementation 'org.apache.camel:camel-http:3.12.0'
-    implementation 'org.apache.camel:camel-undertow:3.12.0'
 
 
     //to filter required ones

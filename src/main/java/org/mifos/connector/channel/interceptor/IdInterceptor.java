@@ -1,7 +1,5 @@
 package org.mifos.connector.channel.interceptor;
 
-import static org.mifos.connector.channel.camel.config.CamelProperties.CLIENTCORRELATIONID;
-
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -16,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
-import org.mifos.connector.channel.camel.routes.ChannelRouteBuilder;
 import org.mifos.connector.common.channel.dto.PhErrorDTO;
 import org.mifos.connector.common.exception.PaymentHubError;
 import org.mifos.connector.common.exception.PaymentHubErrorCategory;
@@ -32,9 +29,6 @@ import org.springframework.web.servlet.HandlerInterceptor;
 @Component
 @Primary
 public class IdInterceptor implements HandlerInterceptor {
-
-    @Autowired
-    ChannelRouteBuilder channelRouteBuilder;
 
     @Value("${redis.idempotency.enabled}")
     Boolean redisIdempotencyEnabled;
@@ -52,6 +46,7 @@ public class IdInterceptor implements HandlerInterceptor {
     public RedisTemplate<String, String> redisTemplate;
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    public static final String CLIENTCORRELATIONID = "X-CorrelationID";
 
     IdInterceptor(Set<String> apiList) {
         this.apiList = apiList;

@@ -1,8 +1,6 @@
 package org.mifos.connector.api.definition;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.mifos.connector.dto.GsmaP2PResponseDto;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -16,8 +14,5 @@ public interface TransferApi {
     GsmaP2PResponseDto transfer(@RequestHeader(value = "Platform-TenantId") String tenant,
             @RequestHeader(value = BATCH_ID_HEADER, required = false) String batchId,
             @RequestHeader(value = CLIENTCORRELATIONID, required = false) String correlationId, @RequestBody Object requestBody)
-            throws JsonProcessingException;
-
-    @GetMapping("/channel/trial")
-    void sample();
+            throws Exception;
 }

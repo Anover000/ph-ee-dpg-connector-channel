@@ -4,9 +4,8 @@ import com.netflix.conductor.client.automator.TaskRunnerConfigurer;
 import com.netflix.conductor.client.http.TaskClient;
 import com.netflix.conductor.client.http.WorkflowClient;
 import com.netflix.conductor.client.worker.Worker;
-import java.util.Arrays;
+import java.util.List;
 import javax.annotation.PostConstruct;
-import org.mifos.connector.conductor.netflixconductorworkers.SampleWorker;
 import org.mifos.connector.conductor.netflixconductorworkers.TransferSampleWorker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -23,13 +22,11 @@ public class NetflixConductorConfig {
         TaskClient taskClient = new TaskClient();
         taskClient.setRootURI(uri);
 
-        int threadCount = 2;
+        int threadCount = 1;
 
-        Worker worker1 = new SampleWorker("task_01");
-        // Worker worker2 = new AddNumbersWorker("simple_task");
         Worker worker3 = new TransferSampleWorker("simple_task");
-        TaskRunnerConfigurer configurer = new TaskRunnerConfigurer.Builder(taskClient, Arrays.asList(worker1, worker3))
-                .withThreadCount(threadCount).build();
+        TaskRunnerConfigurer configurer = new TaskRunnerConfigurer.Builder(taskClient, List.of(worker3)).withThreadCount(threadCount)
+                .build();
 
         configurer.init();
     }
